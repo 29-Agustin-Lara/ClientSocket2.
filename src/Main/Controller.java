@@ -114,9 +114,9 @@ public class Controller implements  Observer, Initializable {
                 String w= String.valueOf(loses);
                 labelLoses.setText(w);
                 ok=false;
-                labels.get(matriz[x][0]).setStyle("-fx-background-color: red; -fx-border-color: white; -fx-border-radius: 5;");
-                labels.get(matriz[x][1]).setStyle("-fx-background-color: red; -fx-border-color: white; -fx-border-radius: 5;");
-                labels.get(matriz[x][2]).setStyle("-fx-background-color: red; -fx-border-color: white; -fx-border-radius: 5;");
+                labels.get(matriz[x][0]).setStyle("-fx-background-color: yellow; -fx-border-color: white; -fx-border-radius: 5;");
+                labels.get(matriz[x][1]).setStyle("-fx-background-color: yellow; -fx-border-color: white; -fx-border-radius: 5;");
+                labels.get(matriz[x][2]).setStyle("-fx-background-color: yellow; -fx-border-color: white; -fx-border-radius: 5;");
             }
             if (labels.get(matriz[x][0]).getText().equals("O") &&
                     labels.get(matriz[x][1]).getText().equals("O") &&
@@ -155,7 +155,7 @@ public class Controller implements  Observer, Initializable {
                 }
                 comprobarGanador();
             }else{
-                labelEsperar.setText("Espera tu turno");
+                labelEsperar.setText("No Es Tu Turno");
             }
         }else{
             labelEsperar.setText("Dale Reiniciar");
@@ -211,7 +211,7 @@ public class Controller implements  Observer, Initializable {
     void conectar(){
         try {
             socket = new Socket("192.168.1.68", 3001);
-            labelConectado.setText( "Conectado...");
+            labelConectado.setText( "CONECTADO**:) ");
             bufferDeSalida = new DataOutputStream(socket.getOutputStream());
             bufferDeSalida.flush();
             ThreadClient cliente = new ThreadClient(socket);
